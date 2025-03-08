@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: supa-demo
+
+server:
+  port: 8081

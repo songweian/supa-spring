@@ -1,9 +1,9 @@
-package org.opengear.supa.http;
+package org.opengear.supa.framework.http;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
-import org.opengear.supa.common.UniResult;
+import org.opengear.supa.framework.common.UniResult;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;

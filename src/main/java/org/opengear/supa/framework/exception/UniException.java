@@ -1,6 +1,6 @@
-package org.opengear.supa.exception;
+package org.opengear.supa.framework.exception;
 
-import org.opengear.supa.common.UniResult;
+import org.opengear.supa.framework.common.UniResult;
 
 public class UniException  extends RuntimeException {
     private String code;

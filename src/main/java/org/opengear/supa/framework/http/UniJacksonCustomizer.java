@@ -1,9 +1,9 @@
-package org.opengear.supa.http;
+package org.opengear.supa.framework.http;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import org.opengear.supa.jackson.LongToStringSerializer;
+import org.opengear.supa.framework.jackson.LongToStringSerializer;
 import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

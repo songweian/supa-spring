@@ -1,4 +1,4 @@
-package org.opengear.supa.common;
+package org.opengear.supa.framework.common;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;

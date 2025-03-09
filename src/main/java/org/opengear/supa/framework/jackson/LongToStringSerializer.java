@@ -1,4 +1,4 @@
-package org.opengear.supa.jackson;
+package org.opengear.supa.framework.jackson;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;

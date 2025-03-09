@@ -1,6 +1,6 @@
 package org.opengear.supa;
 
-import org.opengear.supa.http.IgnoreWrapResult;
+import org.opengear.supa.framework.http.IgnoreWrapResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;

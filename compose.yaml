@@ -1,0 +1,40 @@
+services:
+  postgres:
+    image: 'postgres:16-alpine'
+    environment:
+      - 'POSTGRES_DB=supa_db'
+      - 'POSTGRES_PASSWORD=supa123'
+      - 'POSTGRES_USER=supa'
+    ports:
+      - '5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - supa_net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U supa -d supa_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: 'redis:7-alpine'
+    ports:
+      - '6379'
+    volumes:
+      - redis_data:/data
+    networks:
+      - supa_net
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  supa_net:
+    driver: bridge 

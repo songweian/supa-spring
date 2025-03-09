@@ -2,7 +2,8 @@ package org.opengear.supa;
 
 import org.opengear.supa.framework.http.IgnoreWrapResult;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +15,10 @@ import java.time.Instant;
 public class DemoController {
 
     @Autowired
-    private RedisTemplate<String, Object> redisTemplate;
+    private StringRedisTemplate redisTemplate;
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
     @IgnoreWrapResult
     @RequestMapping(value = "/test")
@@ -26,6 +30,17 @@ public class DemoController {
     public String testRedis() {
         try {
             redisTemplate.opsForValue().set("test-key", "test-value");
+            String value = redisTemplate.opsForValue().get("test-key");
+            return "Success: " + value;
+        } catch (Exception e) {
+            return "Failed: " + e.getMessage();
+        }
+    }
+
+    @GetMapping("/test-postgres")
+    public String testPostgres() {
+        try {
+            jdbcTemplate.execute("SELECT 1");
             return "Success";
         } catch (Exception e) {
             return "Failed: " + e.getMessage();

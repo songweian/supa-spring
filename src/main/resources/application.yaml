@@ -1,6 +1,27 @@
 spring:
   application:
     name: supa-demo
+  docker:
+    compose:
+      enabled: true
+      lifecycle-management: start_and_wait
+  
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:${spring.docker.compose.ports.postgres[5432]}/supa_db
+    username: supa
+    password: supa123
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 5
+      minimum-idle: 1
+    type: com.zaxxer.hikari.HikariDataSource
+  
+  data:
+    redis:
+      host: localhost
+      port: ${spring.docker.compose.ports.redis:6379}
+      database: 0
 
 server:
-  port: 8081
+  port: 8081 

@@ -2,6 +2,7 @@ package org.opengear.supa;
 
 import org.opengear.supa.framework.http.IgnoreWrapResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,7 @@ import java.time.Instant;
 public class DemoController {
 
     @Autowired
-    private StringRedisTemplate redisTemplate;
+    private RedisTemplate redisTemplate;
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -30,7 +31,7 @@ public class DemoController {
     public String testRedis() {
         try {
             redisTemplate.opsForValue().set("test-key", "test-value");
-            String value = redisTemplate.opsForValue().get("test-key");
+            String value = (String) redisTemplate.opsForValue().get("test-key");
             return "Success: " + value;
         } catch (Exception e) {
             return "Failed: " + e.getMessage();

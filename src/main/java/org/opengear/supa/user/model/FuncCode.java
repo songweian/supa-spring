@@ -4,5 +4,5 @@ import java.util.Enumeration;
 
 public interface FuncCode extends Enumeration {
 
-    public String getCode();
+    String getCode();
 }

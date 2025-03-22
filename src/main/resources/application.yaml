@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: supa-demo
+management:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:${spring.docker.compose.ports.postgres[5432]}/supa_db
+    username: supa
+    password: supa123
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 5
+      minimum-idle: 1
+
+  data:
+    redis:
+      host: localhost
+      port: ${spring.docker.compose.ports.redis:6379}
+      database: 0
+
+  rocketmq:
+    name-server: localhost:${spring.docker.compose.ports.namesrv:9876}
+    producer:
+      group: supa-producer-group
+      send-message-timeout: 3000
+      retry-times-when-send-failed: 2
+  endpoint:
+    health:
+      probes:
+        enabled: true
+        add-additional-paths: true
+
+
+server:
+  port: 8081 

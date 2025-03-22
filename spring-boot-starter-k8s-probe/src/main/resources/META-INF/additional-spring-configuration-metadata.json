@@ -1,0 +1,587 @@
+{
+  "groups": [],
+  "properties": [
+    {
+      "name": "opengear.management.endpoint.health.probes.add-additional-paths",
+      "type": "java.lang.Boolean",
+      "description": "OpenGear:<br/> Whether to make the startup liveness and readiness health groups available on the main server port.",
+      "defaultValue": false
+    },
+    {
+      "name": "opengear.management.endpoint.health.probes.enabled",
+      "type": "java.lang.Boolean",
+      "description": "OpenGear:<br/> Whether to enable startup liveness and readiness probes.",
+      "defaultValue": true
+    }
+  ],
+  "hints": [
+    {
+      "name": "server.servlet.jsp.class-name",
+      "providers": [
+        {
+          "name": "class-reference",
+          "parameters": {
+            "target": "jakarta.servlet.http.HttpServlet"
+          }
+        }
+      ]
+    },
+    {
+      "name": "server.tomcat.accesslog.encoding",
+      "providers": [
+        {
+          "name": "handle-as",
+          "parameters": {
+            "target": "java.nio.charset.Charset"
+          }
+        }
+      ]
+    },
+    {
+      "name": "server.tomcat.accesslog.locale",
+      "providers": [
+        {
+          "name": "handle-as",
+          "parameters": {
+            "target": "java.util.Locale"
+          }
+        }
+      ]
+    },
+    {
+      "name": "server.tomcat.relaxed-path-chars",
+      "values": [
+        {
+          "value": "<"
+        },
+        {
+          "value": ">"
+        },
+        {
+          "value": "["
+        },
+        {
+          "value": "\\"
+        },
+        {
+          "value": "]"
+        },
+        {
+          "value": "^"
+        },
+        {
+          "value": "`"
+        },
+        {
+          "value": "{"
+        },
+        {
+          "value": "|"
+        },
+        {
+          "value": "}"
+        }
+      ]
+    },
+    {
+      "name": "server.tomcat.relaxed-query-chars",
+      "values": [
+        {
+          "value": "<"
+        },
+        {
+          "value": ">"
+        },
+        {
+          "value": "["
+        },
+        {
+          "value": "\\"
+        },
+        {
+          "value": "]"
+        },
+        {
+          "value": "^"
+        },
+        {
+          "value": "`"
+        },
+        {
+          "value": "{"
+        },
+        {
+          "value": "|"
+        },
+        {
+          "value": "}"
+        }
+      ]
+    },
+    {
+      "name": "spring.cache.jcache.provider",
+      "providers": [
+        {
+          "name": "class-reference",
+          "parameters": {
+            "target": "javax.cache.spi.CachingProvider"
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring.cassandra.schema-action",
+      "providers": [
+        {
+          "name": "handle-as",
+          "parameters": {
+            "target": "org.springframework.data.cassandra.config.SchemaAction"
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring.data.mongodb.field-naming-strategy",
+      "providers": [
+        {
+          "name": "class-reference",
+          "parameters": {
+            "target": "org.springframework.data.mapping.model.FieldNamingStrategy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring.datasource.data",
+      "providers": [
+        {
+          "name": "handle-as",
+          "parameters": {
+            "target": "java.util.List<org.springframework.core.io.Resource>"
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring.datasource.driver-class-name",
+      "providers": [
+        {
+          "name": "class-reference",
+          "parameters": {
+            "target": "java.sql.Driver"
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring.datasource.schema",
+      "providers": [
+        {
+          "name": "handle-as",
+          "parameters": {
+            "target": "java.util.List<org.springframework.core.io.Resource>"
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring.datasource.xa.data-source-class-name",
+      "providers": [
+        {
+          "name": "class-reference",
+          "parameters": {
+            "target": "javax.sql.XADataSource"
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring.datasource.xa.data-source-class-name",
+      "providers": [
+        {
+          "name": "class-reference",
+          "parameters": {
+            "target": "javax.sql.XADataSource"
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring.graphql.cors.allowed-headers",
+      "values": [
+        {
+          "value": "*"
+        }
+      ],
+      "providers": [
+        {
+          "name": "any"
+        }
+      ]
+    },
+    {
+      "name": "spring.graphql.cors.allowed-methods",
+      "values": [
+        {
+          "value": "*"
+        }
+      ],
+      "providers": [
+        {
+          "name": "any"
+        }
+      ]
+    },
+    {
+      "name": "spring.graphql.cors.allowed-origins",
+      "values": [
+        {
+          "value": "*"
+        }
+      ],
+      "providers": [
+        {
+          "name": "any"
+        }
+      ]
+    },
+    {
+      "name": "spring.jms.listener.session.acknowledge-mode",
+      "values": [
+        {
+          "value": "auto",
+          "description": "Messages sent or received from the session are automatically acknowledged. This is the simplest mode and enables once-only message delivery guarantee."
+        },
+        {
+          "value": "client",
+          "description": "Messages are acknowledged once the message listener implementation has called \"jakarta.jms.Message#acknowledge()\". This mode gives the application (rather than the JMS provider) complete control over message acknowledgement."
+        },
+        {
+          "value": "dups_ok",
+          "description": "Similar to auto acknowledgment except that said acknowledgment is lazy. As a consequence, the messages might be delivered more than once. This mode enables at-least-once message delivery guarantee."
+        }
+      ]
+    },
+    {
+      "name": "spring.jms.template.session.acknowledge-mode",
+      "values": [
+        {
+          "value": "auto",
+          "description": "Messages sent or received from the session are automatically acknowledged. This is the simplest mode and enables once-only message delivery guarantee."
+        },
+        {
+          "value": "client",
+          "description": "Messages are acknowledged once the message listener implementation has called \"jakarta.jms.Message#acknowledge()\". This mode gives the application (rather than the JMS provider) complete control over message acknowledgement."
+        },
+        {
+          "value": "dups_ok",
+          "description": "Similar to auto acknowledgment except that said acknowledgment is lazy. As a consequence, the messages might be delivered more than once. This mode enables at-least-once message delivery guarantee."
+        }
+      ]
+    },
+    {
+      "name": "spring.jmx.server",
+      "providers": [
+        {
+          "name": "spring-bean-reference",
+          "parameters": {
+            "target": "javax.management.MBeanServer"
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring.jpa.hibernate.ddl-auto",
+      "values": [
+        {
+          "value": "none",
+          "description": "Disable DDL handling."
+        },
+        {
+          "value": "validate",
+          "description": "Validate the schema, make no changes to the database."
+        },
+        {
+          "value": "update",
+          "description": "Update the schema if necessary."
+        },
+        {
+          "value": "create",
+          "description": "Create the schema and destroy previous data."
+        },
+        {
+          "value": "create-drop",
+          "description": "Create and then destroy the schema at the end of the session."
+        }
+      ]
+    },
+    {
+      "name": "spring.jpa.hibernate.naming.implicit-strategy",
+      "providers": [
+        {
+          "name": "class-reference",
+          "parameters": {
+            "target": "org.hibernate.boot.model.naming.ImplicitNamingStrategy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring.jpa.hibernate.naming.physical-strategy",
+      "providers": [
+        {
+          "name": "class-reference",
+          "parameters": {
+            "target": "org.hibernate.boot.model.naming.PhysicalNamingStrategy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring.kafka.consumer.auto-offset-reset",
+      "values": [
+        {
+          "value": "earliest",
+          "description": "Automatically reset the offset to the earliest offset."
+        },
+        {
+          "value": "latest",
+          "description": "Automatically reset the offset to the latest offset."
+        },
+        {
+          "value": "none",
+          "description": "Throw exception to the consumer if no previous offset is found for the consumer's group."
+        },
+        {
+          "value": "exception",
+          "description": "Throw exception to the consumer."
+        }
+      ],
+      "providers": [
+        {
+          "name": "any"
+        }
+      ]
+    },
+    {
+      "name": "spring.kafka.consumer.key-deserializer",
+      "providers": [
+        {
+          "name": "handle-as",
+          "parameters": {
+            "target": "org.apache.kafka.common.serialization.Deserializer"
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring.kafka.consumer.value-deserializer",
+      "providers": [
+        {
+          "name": "handle-as",
+          "parameters": {
+            "target": "org.apache.kafka.common.serialization.Deserializer"
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring.kafka.producer.key-serializer",
+      "providers": [
+        {
+          "name": "handle-as",
+          "parameters": {
+            "target": "org.apache.kafka.common.serialization.Serializer"
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring.kafka.producer.value-serializer",
+      "providers": [
+        {
+          "name": "handle-as",
+          "parameters": {
+            "target": "org.apache.kafka.common.serialization.Serializer"
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring.liquibase.change-log",
+      "providers": [
+        {
+          "name": "handle-as",
+          "parameters": {
+            "target": "org.springframework.core.io.Resource"
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring.mvc.converters.preferred-json-mapper",
+      "values": [
+        {
+          "value": "gson"
+        },
+        {
+          "value": "jackson"
+        },
+        {
+          "value": "jsonb"
+        }
+      ],
+      "providers": [
+        {
+          "name": "any"
+        }
+      ]
+    },
+    {
+      "name": "spring.mvc.format.date",
+      "values": [
+        {
+          "value": "dd/MM/yyyy",
+          "description": "Example date format. Any format supported by DateTimeFormatter.parse can be used."
+        },
+        {
+          "value": "iso",
+          "description": "ISO-8601 extended local date format."
+        }
+      ],
+      "providers": [
+        {
+          "name": "any"
+        }
+      ]
+    },
+    {
+      "name": "spring.mvc.format.date-time",
+      "values": [
+        {
+          "value": "yyyy-MM-dd HH:mm:ss",
+          "description": "Example date-time format. Any format supported by DateTimeFormatter.parse can be used."
+        },
+        {
+          "value": "iso",
+          "description": "ISO-8601 extended local date-time format."
+        },
+        {
+          "value": "iso-offset",
+          "description": "ISO offset date-time format."
+        }
+      ],
+      "providers": [
+        {
+          "name": "any"
+        }
+      ]
+    },
+    {
+      "name": "spring.mvc.format.time",
+      "values": [
+        {
+          "value": "HH:mm:ss",
+          "description": "Example time format. Any format supported by DateTimeFormatter.parse can be used."
+        },
+        {
+          "value": "iso",
+          "description": "ISO-8601 extended local time format."
+        },
+        {
+          "value": "iso-offset",
+          "description": "ISO offset time format."
+        }
+      ],
+      "providers": [
+        {
+          "name": "any"
+        }
+      ]
+    },
+    {
+      "name": "spring.sql.init.data-locations",
+      "providers": [
+        {
+          "name": "handle-as",
+          "parameters": {
+            "target": "java.util.List<org.springframework.core.io.Resource>"
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring.sql.init.schema-locations",
+      "providers": [
+        {
+          "name": "handle-as",
+          "parameters": {
+            "target": "java.util.List<org.springframework.core.io.Resource>"
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring.webflux.format.date",
+      "values": [
+        {
+          "value": "dd/MM/yyyy",
+          "description": "Example date format. Any format supported by DateTimeFormatter.parse can be used."
+        },
+        {
+          "value": "iso",
+          "description": "ISO-8601 extended local date format."
+        }
+      ],
+      "providers": [
+        {
+          "name": "any"
+        }
+      ]
+    },
+    {
+      "name": "spring.webflux.format.date-time",
+      "values": [
+        {
+          "value": "yyyy-MM-dd HH:mm:ss",
+          "description": "Example date-time format. Any format supported by DateTimeFormatter.parse can be used."
+        },
+        {
+          "value": "iso",
+          "description": "ISO-8601 extended local date-time format."
+        },
+        {
+          "value": "iso-offset",
+          "description": "ISO offset date-time format."
+        }
+      ],
+      "providers": [
+        {
+          "name": "any"
+        }
+      ]
+    },
+    {
+      "name": "spring.webflux.format.time",
+      "values": [
+        {
+          "value": "HH:mm:ss",
+          "description": "Example time format. Any format supported by DateTimeFormatter.parse can be used."
+        },
+        {
+          "value": "iso",
+          "description": "ISO-8601 extended local time format."
+        },
+        {
+          "value": "iso-offset",
+          "description": "ISO offset time format."
+        }
+      ],
+      "providers": [
+        {
+          "name": "any"
+        }
+      ]
+    }
+  ]
+}

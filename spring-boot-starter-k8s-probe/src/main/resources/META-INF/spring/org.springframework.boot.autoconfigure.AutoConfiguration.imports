@@ -1,0 +1,3 @@
+org.opengear.spring.boot.actuate.autoconfigure.availability.AvailabilityProbesAutoConfiguration
+org.opengear.spring.boot.actuate.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+org.opengear.spring.boot.actuate.autoconfigure.availability.AvailabilityHealthContributorAutoConfiguration
